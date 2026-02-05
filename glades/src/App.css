@@ -1,0 +1,113 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+:root {
+  --kraft-brown: #8B7355;
+  --kraft-light: #D7C1A9;
+  --kraft-dark: #5D4C37;
+  --kraft-paper: #F5F1EA;
+  --text-dark: #333333;
+  --text-light: #666666;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--kraft-paper);
+  overflow-x: hidden;
+}
+
+/* App.css - Add these styles */
+
+/* Ensure the main app container is centered */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* Center all content in main sections */
+.home-page,
+.about-page,
+.products-page,
+.contact-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* Center all container content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Center hero content */
+.hero-content,
+.about-hero-content,
+.products-hero-content,
+.contact-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Center titles and text */
+h1, h2, h3, .section-title {
+  text-align: center;
+}
+
+/* Center buttons */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Center footer content */
+.footer-content,
+.footer-bottom {
+  text-align: center;
+}
+
+/* Center all page content */
+.page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.page-enter {
+  opacity: 0;
+}
+
+.page-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}

@@ -1,0 +1,237 @@
+/* Home.css - COMPLETE FIXED VERSION */
+.home-page {
+  margin-top: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero Section - FIXED CENTERING */
+.hero-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ADD THIS */
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-content {
+  max-width: 600px;
+  position: relative;
+  z-index: 2;
+  display: flex; /* ADD THIS */
+  flex-direction: column; /* ADD THIS */
+  align-items: center; /* ADD THIS - THIS CENTERS CONTENT */
+  text-align: center; /* ADD THIS - THIS CENTERS TEXT */
+  width: 100%; /* ADD THIS */
+  margin: 0 auto; /* ADD THIS - CENTERS THE BLOCK */
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+  text-align: center; /* ADD THIS */
+  width: 100%; /* ADD THIS */
+}
+
+.highlight {
+  color: var(--kraft-brown);
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: var(--kraft-light);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  text-align: center; /* ADD THIS */
+  width: 100%; /* ADD THIS */
+}
+
+.cta-button {
+  background-color: var(--kraft-brown);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  color: var(--kraft-brown);
+  border: 2px solid var(--kraft-brown);
+}
+
+.cta-button.secondary:hover {
+  background-color: var(--kraft-brown);
+  color: white;
+}
+
+/* Comment out or remove hero-image if it's causing issues */
+.hero-image {
+  display: none; /* ADD THIS TO HIDE THE RIGHT SIDE IMAGE */
+}
+
+/* Features Section - ADD CENTERING */
+.features-section {
+  padding: 6rem 0;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ADD THIS */
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-dark);
+  width: 100%; /* ADD THIS */
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 1200px; /* ADD THIS */
+}
+
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid var(--kraft-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ADD THIS */
+}
+
+.feature-card:hover {
+  border-color: var(--kraft-brown);
+  box-shadow: 0 10px 30px rgba(139, 115, 85, 0.1);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  text-align: center; /* ADD THIS */
+}
+
+.feature-card p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  text-align: center; /* ADD THIS */
+}
+
+/* CTA Section - ADD CENTERING */
+.cta-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, var(--kraft-light) 0%, var(--kraft-brown) 100%);
+  text-align: center;
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ADD THIS */
+}
+
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ADD THIS */
+  justify-content: center; /* ADD THIS */
+  text-align: center; /* ADD THIS */
+  width: 100%; /* ADD THIS */
+  max-width: 800px; /* ADD THIS */
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 0;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-top: 2rem;
+    transform: none;
+    top: 0;
+  }
+  
+  .kraft-texture {
+    border-radius: 20px;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+}

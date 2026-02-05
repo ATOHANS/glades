@@ -1,0 +1,226 @@
+.products-page {
+    margin-top: 80px;
+  }
+  
+  /* Hero Section */
+  .products-hero {
+    background: linear-gradient(135deg, var(--kraft-paper) 0%, var(--kraft-light) 100%);
+    padding: 4rem 0;
+    text-align: center;
+  }
+  
+  .products-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+  }
+  
+  .products-hero p {
+    font-size: 1.25rem;
+    color: var(--text-light);
+  }
+  
+  /* Filters */
+  .filters-section {
+    padding: 2rem 0;
+    background-color: white;
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+    border-bottom: 1px solid var(--kraft-light);
+  }
+  
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--kraft-light);
+    background: white;
+    color: var(--text-dark);
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-btn:hover {
+    border-color: var(--kraft-brown);
+  }
+  
+  .filter-btn.active {
+    background-color: var(--kraft-brown);
+    color: white;
+    border-color: var(--kraft-brown);
+  }
+  
+  /* Products Grid */
+  .products-grid-section {
+    padding: 4rem 0;
+    background-color: var(--kraft-paper);
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  
+  .product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+  
+  .product-card:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  }
+  
+  .product-image {
+    height: 200px;
+    background: linear-gradient(135deg, var(--kraft-light) 0%, var(--kraft-brown) 100%);
+    position: relative;
+    opacity: 0.8;
+  }
+  
+  .product-category {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.25rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--kraft-brown);
+  }
+  
+  .product-content {
+    padding: 1.5rem;
+  }
+  
+  .product-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+  }
+  
+  .product-description {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .product-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .feature-tag {
+    background-color: var(--kraft-paper);
+    color: var(--kraft-brown);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--kraft-light);
+  }
+  
+  .product-price {
+    font-weight: 600;
+    color: var(--kraft-dark);
+    font-size: 1.1rem;
+  }
+  
+  .inquire-btn {
+    background-color: var(--kraft-brown);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .inquire-btn:hover {
+    background-color: var(--kraft-dark);
+  }
+  
+  /* Custom Solutions */
+  .custom-solutions {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--kraft-brown) 0%, var(--kraft-dark) 100%);
+    text-align: center;
+    color: white;
+  }
+  
+  .custom-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .custom-content p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .custom-btn {
+    background-color: white;
+    color: var(--kraft-dark);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .custom-btn:hover {
+    background-color: var(--kraft-light);
+  }
+  
+  @media (max-width: 768px) {
+    .products-hero h1 {
+      font-size: 2rem;
+    }
+    
+    .filters {
+      gap: 0.5rem;
+    }
+    
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .custom-content h2 {
+      font-size: 2rem;
+    }
+  }

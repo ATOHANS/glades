@@ -44,7 +44,7 @@ const About = () => {
             animate="visible"
           >
             <motion.h1 variants={fadeInUp} className="about-title">
-              Crafting Sustainable Solutions Since 1995
+              Crafting Sustainable Solutions Since 1996
             </motion.h1>
             <motion.p variants={fadeInUp} className="about-subtitle">
               Pioneering eco-friendly kraft manufacturing with a commitment to quality and innovation.
@@ -63,11 +63,14 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2>Our Story</h2>
+            <h1>About Glades</h1>
+            <h2>The Glades Greiner Group
+            </h2>
             <p>
-              Founded in 1995, Kraft Manufacture began with a simple vision: to create sustainable packaging 
-              solutions that don't compromise on quality. What started as a small family-run operation has 
-              grown into a leading manufacturer of eco-friendly kraft products.
+            Founded in 1996 in Singapore; Currently a Key Supplier to the major QSR's and Institutional Food Companies in China, New Zealand, Australia and Philippines The company employs approximately 900 people working at the four factories in China and Philippines.
+
+The company specializes in supplying the top Quick Service Restaurants (QSR) and Institutional / Retail Packaging. Glades have expanded into plastic thermoforming and injection molded products and paper cups and lids. The company has enjoyed steady growth for the past many years. From initial package concept to product launch, Glades does it all: 
+creative package design, prototyping, in-house tool design and build, extrusion, thermoforming and supply chain management.
             </p>
             <p>
               Our journey has been guided by three core principles: sustainability, innovation, and craftsmanship. 

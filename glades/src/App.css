@@ -7,12 +7,12 @@
 }
 
 :root {
-  --kraft-brown: #8B7355;
-  --kraft-light: #D7C1A9;
-  --kraft-dark: #5D4C37;
+  --kraft-brown: #DC3C22;
+  --kraft-light: #FBF5DE;
+  --kraft-dark: #3D74B6;
   --kraft-paper: #F5F1EA;
   --text-dark: #333333;
-  --text-light: #666666;
+  --text-light: #EAC8A6;
 }
 
 body {
@@ -20,6 +20,7 @@ body {
   color: var(--text-dark);
   background-color: var(--kraft-paper);
   overflow-x: hidden;
+  
 }
 
 /* App.css - Add these styles */

@@ -1,59 +1,87 @@
 .footer {
-    background-color: var(--kraft-dark);
-    color: white;
-    padding: 3rem 0 1rem;
-    margin-top: auto;
-  }
-  
+  background-color: #292929; /* Changed to black */
+  color: white;
+  padding: 3rem 0 1rem;
+  margin-top: auto;
+  width: 100%;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.footer-section h3 span {
+  color: var(--kraft-light); /* You can change this too if needed */
+}
+
+.footer-section p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.footer-section h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--kraft-light); /* Gold color on hover */
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+/* Optional: Add accent colors */
+.footer-section a:hover {
+  color: #DC3C22; /* Your kraft-brown color on hover */
+}
+
+/* Optional: Make span color match your theme */
+.footer-section h3 span {
+  color: #DC3C22; /* Change to kraft-brown if preferred */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
   .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    margin-bottom: 2rem;
-  }
-  
-  .footer-section h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .footer-section h3 span {
-    color: var(--kraft-light);
-  }
-  
-  .footer-section p {
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
-  }
-  
-  .footer-section h4 {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    color: white;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
   }
   
   .footer-section ul {
-    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .footer-section ul li {
-    margin-bottom: 0.5rem;
-  }
-  
-  .footer-section a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-section a:hover {
-    color: white;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.9rem;
-  }
+}

@@ -36,20 +36,20 @@ const Contact = () => {
     {
       icon: <FaPhone />,
       title: "Phone",
-      info: "+1 (555) 123-4567",
+      info: "(+632) 531-2203 / 531-2248",
       subtitle: "Mon-Fri, 9AM-6PM"
     },
     {
       icon: <FaEnvelope />,
       title: "Email",
-      info: "contact@kraftmanufacture.com",
+      info: "gic.sales@glades-intl.com",
       subtitle: "We reply within 24 hours"
     },
     {
       icon: <FaMapMarkerAlt />,
       title: "Address",
-      info: "123 Factory Street",
-      subtitle: "Industrial Zone, City 12345"
+      info: "LIIP, Solid Street, Mamplasan Rd, Biñan, 4026 Laguna",
+      subtitle: "Biñan City, Philippines"
     },
     {
       icon: <FaClock />,
@@ -215,21 +215,41 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
           >
             <h2>Our Location</h2>
-            <div className="map-placeholder">
-              <div className="map-content">
-                <h3>Visit Our Factory</h3>
-                <p>123 Factory Street</p>
-                <p>Industrial Zone</p>
-                <p>City, State 12345</p>
-                <div className="directions-btn">
-                  Get Directions
-                </div>
+            
+            {/* Google Maps Embed */}
+            <div className="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3376.641162649566!2d121.0751299!3d14.2847705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d7ece4572dfd%3A0xcc5303f0beb3f179!2sGlades%20International%20Corporation%20Plant%201!5e0!3m2!1sen!2sph!4v1707000000000"
+                width="100%"
+                height="400"
+                style={{ border: 0, borderRadius: '10px' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Glades International Corporation Location"
+              ></iframe>
+              
+              <div className="map-info">
+                <h3>Visit Our Office</h3>
+                <p><strong>Address:</strong> LIIP, Solid Street, Mamplasan Rd, Biñan, 4026 Laguna</p>
+                
+                <motion.a
+                  href="https://maps.app.goo.gl/NB1HAisvyWz4A9Bw6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="directions-btn"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <FaMapMarkerAlt style={{ marginRight: '8px' }} />
+                  Get Directions on Google Maps
+                </motion.a>
               </div>
             </div>
             
             <div className="visit-info">
               <h3>Planning a Visit?</h3>
-              <p>Please schedule an appointment in advance. We'll ensure a team member is available to give you a tour of our facilities.</p>
+              <p>Please schedule an appointment in advance. We'll ensure a team member is available to assist you.</p>
             </div>
           </motion.section>
         </div>

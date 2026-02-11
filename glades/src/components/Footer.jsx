@@ -17,7 +17,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>Kraft<span>Manufacture</span></h3>
+            <h3>Glades<span> International Corporation</span></h3>
             <p>Sustainable kraft solutions for modern packaging needs.</p>
           </div>
           
@@ -33,15 +33,14 @@ const Footer = () => {
           
           <div className="footer-section">
             <h4>Contact</h4>
-            <p>123 Factory Street</p>
-            <p>Industrial Zone</p>
-            <p>contact@kraftmanufacture.com</p>
-            <p>+1 (555) 123-4567</p>
+            <p>Manxon Bldg. Arayat corner Road 1 Street, Mandaluyong City, Philippines</p>
+            <p>gic.sales@glades-intl.com</p>
+            <p>(+632) 531-2203 / 531-2248</p>
           </div>
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Kraft Manufacturing. All rights reserved.</p>
+          <p>&copy; {currentYear} Glades International Corporation. All rights reserved.</p>
         </div>
       </div>
     </motion.footer>

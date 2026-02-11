@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './About.css';
+import mingPhoto from '../assets/ming.jpg';
 
 const About = () => {
   const fadeInUp = {
@@ -8,10 +9,7 @@ const About = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
+      transition: { duration: 0.6, ease: "easeOut" }
     }
   };
 
@@ -64,17 +62,26 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <h1>About Glades</h1>
-            <h2>The Glades Greiner Group
-            </h2>
-            <p>
-            Founded in 1996 in Singapore; Currently a Key Supplier to the major QSR's and Institutional Food Companies in China, New Zealand, Australia and Philippines The company employs approximately 900 people working at the four factories in China and Philippines.
+            <h2>The Glades Greiner Group</h2>
 
-The company specializes in supplying the top Quick Service Restaurants (QSR) and Institutional / Retail Packaging. Glades have expanded into plastic thermoforming and injection molded products and paper cups and lids. The company has enjoyed steady growth for the past many years. From initial package concept to product launch, Glades does it all: 
-creative package design, prototyping, in-house tool design and build, extrusion, thermoforming and supply chain management.
-            </p>
             <p>
-              Our journey has been guided by three core principles: sustainability, innovation, and craftsmanship. 
-              We believe that great packaging should protect both the product and the planet.
+              Founded in 1996 in Singapore; Currently a Key Supplier to the major QSR's
+              and Institutional Food Companies in China, New Zealand, Australia and
+              Philippines. The company employs approximately 900 people working at
+              the four factories in China and Philippines.
+            </p>
+
+            <p>
+              The company specializes in supplying the top Quick Service Restaurants
+              (QSR) and Institutional / Retail Packaging. Glades have expanded into
+              plastic thermoforming and injection molded products and paper cups and
+              lids.
+            </p>
+
+            <p>
+              Our journey has been guided by three core principles: sustainability,
+              innovation, and craftsmanship. We believe that great packaging should
+              protect both the product and the planet.
             </p>
           </motion.div>
         </div>
@@ -92,27 +99,31 @@ creative package design, prototyping, in-house tool design and build, extrusion,
           >
             Our Values
           </motion.h2>
-          
+
           <div className="values-grid">
             {[
               {
                 title: "Sustainability",
-                description: "We use 100% renewable materials and implement eco-friendly practices in every step of our manufacturing process.",
+                description:
+                  "We use 100% renewable materials and implement eco-friendly practices.",
                 icon: "🌍"
               },
               {
                 title: "Quality",
-                description: "Every product undergoes rigorous quality checks to ensure durability, strength, and perfect finish.",
+                description:
+                  "Every product undergoes rigorous quality checks.",
                 icon: "⭐"
               },
               {
                 title: "Innovation",
-                description: "Continuous research and development to create better, more sustainable packaging solutions.",
+                description:
+                  "Continuous R&D to create better packaging solutions.",
                 icon: "💡"
               },
               {
                 title: "Customer Focus",
-                description: "Custom solutions tailored to meet specific client needs with exceptional service.",
+                description:
+                  "Custom solutions tailored to client needs.",
                 icon: "🤝"
               }
             ].map((value, index) => (
@@ -146,28 +157,33 @@ creative package design, prototyping, in-house tool design and build, extrusion,
           >
             Our Team
           </motion.h2>
-          
+
           <div className="team-grid">
             {[
               {
-                name: "Sarah Johnson",
+                name: "Jammil Espitola",
                 role: "CEO & Founder",
-                bio: "With 25+ years in sustainable manufacturing"
+                bio: "25+ years in sustainable manufacturing",
+                hasPhoto: false
               },
               {
-                name: "Michael Chen",
-                role: "Production Director",
-                bio: "Expert in kraft paper technology"
+                name: "Lee Ming Ho",
+                role: "Porman",
+                bio: "Expert in utos, sando gang, skrr skrr",
+                hasPhoto: true,
+                photoSrc: mingPhoto
               },
               {
-                name: "Emma Rodriguez",
+                name: "John Carlo Pacunini",
                 role: "Sustainability Officer",
-                bio: "Leading our green initiatives"
+                bio: "Leading green initiatives",
+                hasPhoto: false
               },
               {
-                name: "David Wilson",
+                name: "Jason Bourne",
                 role: "Sales Director",
-                bio: "Building client relationships since 2005"
+                bio: "Building client relationships",
+                hasPhoto: false
               }
             ].map((member, index) => (
               <motion.div
@@ -180,8 +196,17 @@ creative package design, prototyping, in-house tool design and build, extrusion,
                 whileHover={{ y: -10 }}
               >
                 <div className="team-avatar">
-                  <span>{member.name.charAt(0)}</span>
+                  {member.hasPhoto ? (
+                    <img
+                      src={member.photoSrc}
+                      alt={member.name}
+                      className="team-photo"
+                    />
+                  ) : (
+                    <span>{member.name.charAt(0)}</span>
+                  )}
                 </div>
+
                 <h3>{member.name}</h3>
                 <p className="team-role">{member.role}</p>
                 <p className="team-bio">{member.bio}</p>

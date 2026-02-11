@@ -1,4 +1,4 @@
-/* Home.css - COMPLETE FIXED VERSION */
+/* Home.css - COMPLETE FIXED VERSION WITH DROP SHADOWS */
 .home-page {
   margin-top: 80px;
   width: 100%;
@@ -12,38 +12,69 @@
   min-height: 80vh;
   display: flex;
   align-items: center;
-  justify-content: center; /* ADD THIS */
+  justify-content: center;
   position: relative;
   overflow: hidden;
   width: 100%;
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width: 1000px;
   position: relative;
   z-index: 2;
-  display: flex; /* ADD THIS */
-  flex-direction: column; /* ADD THIS */
-  align-items: center; /* ADD THIS - THIS CENTERS CONTENT */
-  text-align: center; /* ADD THIS - THIS CENTERS TEXT */
-  width: 100%; /* ADD THIS */
-  margin: 0 auto; /* ADD THIS - CENTERS THE BLOCK */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
+/* Hero Title with Drop Shadow */
 .hero-title {
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1.5rem;
   color: var(--text-dark);
-  text-align: center; /* ADD THIS */
-  width: 100%; /* ADD THIS */
+  text-align: center;
+  max-width: 100%;
+  word-wrap: break-word;
+  
+  /* DROP SHADOW EFFECT */
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 8px 16px rgba(0, 0, 0, 0.06);
+  
+  /* Optional: Add a slight glow effect */
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Alternative: Stronger shadow */
+.hero-title.strong-shadow {
+  text-shadow: 
+    0 3px 6px rgba(0, 0, 0, 0.15),
+    0 6px 12px rgba(0, 0, 0, 0.12),
+    0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Alternative: Colored shadow */
+.hero-title.colored-shadow {
+  text-shadow: 
+    0 2px 4px rgba(139, 115, 85, 0.2),
+    0 4px 8px rgba(139, 115, 85, 0.15);
 }
 
 .highlight {
   color: var(--kraft-brown);
   position: relative;
   display: inline-block;
+  
+  /* Add shadow to highlight too */
+  text-shadow: 
+    0 2px 4px rgba(139, 115, 85, 0.2),
+    0 4px 8px rgba(139, 115, 85, 0.15);
 }
 
 .highlight::after {
@@ -58,13 +89,29 @@
   z-index: -1;
 }
 
+/* Hero Subtitle with Drop Shadow */
 .hero-subtitle {
   font-size: 1.25rem;
   color: var(--text-light);
   margin-bottom: 2rem;
   line-height: 1.6;
-  text-align: center; /* ADD THIS */
-  width: 100%; /* ADD THIS */
+  text-align: center;
+  width: 100%;
+  
+  /* DROP SHADOW EFFECT */
+  text-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+  
+  /* Optional: Subtle filter shadow */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+}
+
+/* Alternative: Stronger subtitle shadow */
+.hero-subtitle.strong-shadow {
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button {
@@ -79,41 +126,92 @@
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
+  
+  /* Add shadow to button too */
+  box-shadow: 
+    0 4px 6px rgba(139, 115, 85, 0.2),
+    0 2px 4px rgba(139, 115, 85, 0.15);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 8px rgba(139, 115, 85, 0.25),
+    0 4px 6px rgba(139, 115, 85, 0.2);
 }
 
 .cta-button.secondary {
   background-color: transparent;
   color: var(--kraft-brown);
   border: 2px solid var(--kraft-brown);
+  box-shadow: 
+    0 2px 4px rgba(139, 115, 85, 0.1);
 }
 
 .cta-button.secondary:hover {
   background-color: var(--kraft-brown);
   color: white;
+  box-shadow: 
+    0 4px 6px rgba(139, 115, 85, 0.2);
 }
 
 /* Comment out or remove hero-image if it's causing issues */
 .hero-image {
-  display: none; /* ADD THIS TO HIDE THE RIGHT SIDE IMAGE */
+  display: none;
 }
 
-/* Features Section - ADD CENTERING */
+/* ========== SLIDESHOW BACKGROUND ========== */
+.hero-bg-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  animation: slideshow 20s infinite;
+  opacity: 0.7; /* Slightly transparent so text stands out */
+}
+
+@keyframes slideshow {
+  0%, 25% {
+    background-image: url('/assets/china.jpg');
+  }
+  25.1%, 50% {
+    background-image: url('/assets/cup.jpg');
+  }
+  50.1%, 75% {
+    background-image: url('/assets/happymeal.jpg');
+  }
+  75.1%, 100% {
+    background-image: url('/assets/ming.jpg');
+  }
+}
+
+/* ========== FEATURES SECTION ========== */
 .features-section {
   padding: 6rem 0;
   background-color: white;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* ADD THIS */
+  align-items: center;
 }
 
-.section-title {
+/* FORCE BLACK TEXT FOR "WHY CHOOSE OUR KRAFT" */
+.features-section .section-title {
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
-  color: var(--text-dark);
-  width: 100%; /* ADD THIS */
+  color: #000000 !important; /* FORCE BLACK WITH !important */
+  width: 100%;
+  
+  /* Add shadow to section titles too */
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 .features-grid {
@@ -122,7 +220,7 @@
   gap: 2rem;
   margin-top: 3rem;
   width: 100%;
-  max-width: 1200px; /* ADD THIS */
+  max-width: 1200px;
 }
 
 .feature-card {
@@ -134,30 +232,46 @@
   border: 1px solid var(--kraft-light);
   display: flex;
   flex-direction: column;
-  align-items: center; /* ADD THIS */
+  align-items: center;
+  
+  /* Add shadow to feature cards */
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .feature-card:hover {
   border-color: var(--kraft-brown);
-  box-shadow: 0 10px 30px rgba(139, 115, 85, 0.1);
+  box-shadow: 
+    0 10px 20px rgba(139, 115, 85, 0.1),
+    0 6px 6px rgba(139, 115, 85, 0.08);
+  transform: translateY(-4px);
 }
 
 .feature-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for icons */
 }
 
-.feature-card h3 {
+/* FORCE BLACK TEXT FOR FEATURE CARD HEADINGS */
+.features-section .feature-card h3 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: var(--text-dark);
-  text-align: center; /* ADD THIS */
+  color: #000000 !important; /* FORCE BLACK WITH !important */
+  text-align: center;
+  text-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
-.feature-card p {
-  color: var(--text-light);
+/* FORCE DARK GRAY FOR FEATURE DESCRIPTIONS */
+.features-section .feature-card p {
+  color: #333333 !important; /* Dark gray instead of light text */
   font-size: 0.9rem;
-  text-align: center; /* ADD THIS */
+  text-align: center;
+  text-shadow: 
+    0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 /* CTA Section - ADD CENTERING */
@@ -169,34 +283,51 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* ADD THIS */
+  align-items: center;
 }
 
 .cta-content {
   display: flex;
   flex-direction: column;
-  align-items: center; /* ADD THIS */
-  justify-content: center; /* ADD THIS */
-  text-align: center; /* ADD THIS */
-  width: 100%; /* ADD THIS */
-  max-width: 800px; /* ADD THIS */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1500px;
 }
 
 .cta-content h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  
+  /* White text needs stronger shadow for contrast */
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .cta-content p {
   font-size: 1.25rem;
   margin-bottom: 2rem;
   opacity: 0.9;
+  
+  /* Subtle shadow for white text */
+  text-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
   .hero-title {
     font-size: 2.5rem;
+    text-shadow: 
+      0 2px 3px rgba(0, 0, 0, 0.1),
+      0 3px 6px rgba(0, 0, 0, 0.08);
+  }
+  
+  .features-section .section-title {
+    font-size: 2.2rem;
+    color: #000000 !important;
   }
 }
 
@@ -224,14 +355,57 @@
   
   .hero-title {
     font-size: 2rem;
+    text-shadow: 
+      0 1px 2px rgba(0, 0, 0, 0.1),
+      0 2px 4px rgba(0, 0, 0, 0.08);
   }
   
-  .section-title {
+  .hero-subtitle {
+    text-shadow: 
+      0 1px 1px rgba(0, 0, 0, 0.08);
+  }
+  
+  .features-section .section-title {
     font-size: 2rem;
+    color: #000000 !important; /* Ensure black on mobile too */
+    text-shadow: 
+      0 1px 2px rgba(0, 0, 0, 0.1);
   }
   
   .features-grid {
     grid-template-columns: 1fr;
     padding: 0 20px;
+  }
+  
+  /* Reduce shadow intensity on mobile */
+  .feature-card {
+    box-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.05),
+      0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .features-section .feature-card h3 {
+    color: #000000 !important; /* Ensure black on mobile */
+  }
+  
+  .features-section .feature-card p {
+    color: #333333 !important; /* Ensure dark gray on mobile */
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .hero-title {
+    text-shadow: 
+      0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-subtitle {
+    text-shadow: none; /* Remove shadow on very small screens */
+  }
+  
+  .features-section .section-title {
+    font-size: 1.8rem;
+    color: #000000 !important; /* Ensure black on very small screens */
   }
 }

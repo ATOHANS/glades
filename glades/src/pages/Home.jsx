@@ -35,8 +35,13 @@ const Home = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      {/* Hero Section - SIMPLIFIED */}
+
+      {/* HERO SECTION */}
       <section className="hero-section">
+
+        {/* BACKGROUND SLIDESHOW */}
+        <div className="hero-bg-slideshow"></div>
+
         <div className="container">
           <motion.div
             className="hero-content"
@@ -45,23 +50,21 @@ const Home = () => {
             animate="visible"
           >
             <motion.h1 variants={itemVariants} className="hero-title">
-              Glades
-              <br />
+              Glades <br />
               <span className="highlight">International Corporation</span>
             </motion.h1>
-            
+
             <motion.p variants={itemVariants} className="hero-subtitle">
               Eco-friendly kraft paper solutions for modern packaging needs.<br />
               Crafted with precision, delivered with care.
             </motion.p>
-            
+
             <motion.div variants={itemVariants}>
               <Link to="/products">
-                <motion.button 
+                <motion.button
                   className="cta-button"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
                 >
                   Explore Products
                 </motion.button>
@@ -71,10 +74,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* FEATURES */}
       <section className="features-section">
         <div className="container">
-          <motion.h2 
+          <motion.h2
             className="section-title"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -83,29 +86,13 @@ const Home = () => {
           >
             Why Choose Our Kraft
           </motion.h2>
-          
+
           <div className="features-grid">
             {[
-              {
-                title: "Eco-Friendly",
-                description: "100% biodegradable materials",
-                icon: "🌱"
-              },
-              {
-                title: "High Quality",
-                description: "Premium durability and texture",
-                icon: "⭐"
-              },
-              {
-                title: "Custom Solutions",
-                description: "Tailored to your specific needs",
-                icon: "✂️"
-              },
-              {
-                title: "Fast Delivery",
-                description: "Timely production and shipping",
-                icon: "🚚"
-              }
+              { title: "Eco-Friendly", description: "100% biodegradable materials", icon: "🌱" },
+              { title: "High Quality", description: "Premium durability and texture", icon: "⭐" },
+              { title: "Custom Solutions", description: "Tailored to your specific needs", icon: "✂️" },
+              { title: "Fast Delivery", description: "Timely production and shipping", icon: "🚚" }
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -125,7 +112,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="cta-section">
         <div className="container">
           <motion.div
@@ -138,7 +125,7 @@ const Home = () => {
             <h2>Ready to Package Sustainably?</h2>
             <p>Get a custom quote for your kraft paper needs</p>
             <Link to="/contact">
-              <motion.button 
+              <motion.button
                 className="cta-button secondary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -149,6 +136,7 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+
     </motion.div>
   );
 };

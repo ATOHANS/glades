@@ -65,149 +65,71 @@ const Products = () => {
     { id: 'accessories', label: 'Accessories' }
   ];
 
-  const filteredProducts = activeFilter === 'all' 
-    ? products 
-    : products.filter(product => product.category === activeFilter);
-
-  const fadeInUp = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
+  const filteredProducts =
+    activeFilter === 'all'
+      ? products
+      : products.filter(p => p.category === activeFilter);
 
   return (
-    <motion.div
-      className="products-page"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      {/* Hero Section */}
+    <div className="products-page">
+
       <section className="products-hero">
         <div className="container">
-          <motion.div
-            className="products-hero-content"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1>Our Products</h1>
-            <p>Sustainable kraft solutions for every packaging need</p>
-          </motion.div>
+          <h1>Our Products</h1>
+          <p>Sustainable kraft solutions for every packaging need</p>
         </div>
       </section>
 
-      {/* Filters */}
       <section className="filters-section">
-        <div className="container">
-          <motion.div
-            className="filters"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            {filters.map((filter) => (
-              <motion.button
-                key={filter.id}
-                className={`filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
-                onClick={() => setActiveFilter(filter.id)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {filter.label}
-              </motion.button>
-            ))}
-          </motion.div>
+        <div className="container filters">
+          {filters.map(filter => (
+            <button
+              key={filter.id}
+              className={`filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
+              onClick={() => setActiveFilter(filter.id)}
+            >
+              {filter.label}
+            </button>
+          ))}
         </div>
       </section>
 
-      {/* Products Grid */}
       <section className="products-grid-section">
         <div className="container">
-          <motion.div 
-            className="products-grid"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.1,
-                  delayChildren: 0.2
-                }
-              }
-            }}
-            initial="hidden"
-            animate="visible"
-          >
-            {filteredProducts.map((product) => (
+          <div className="products-grid">
+            {filteredProducts.map(product => (
               <motion.div
                 key={product.id}
                 className="product-card"
-                variants={fadeInUp}
-                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                transition={{ duration: 0.2 }}
               >
                 <div className="product-image">
-                  <div className={`product-category ${product.category}`}>
-                    {product.category}
-                  </div>
+                  <span className="product-category">{product.category}</span>
                 </div>
+
                 <div className="product-content">
                   <h3>{product.name}</h3>
-                  <p className="product-description">{product.description}</p>
-                  
+                  <p>{product.description}</p>
+
                   <div className="product-features">
-                    {product.features.map((feature, index) => (
-                      <span key={index} className="feature-tag">{feature}</span>
+                    {product.features.map((f, i) => (
+                      <span key={i} className="feature-tag">{f}</span>
                     ))}
                   </div>
-                  
+
                   <div className="product-footer">
                     <span className="product-price">{product.price}</span>
-                    <motion.button 
-                      className="inquire-btn"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Inquire Now
-                    </motion.button>
+                    <button className="inquire-btn">Inquire Now</button>
                   </div>
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Custom Solutions */}
-      <section className="custom-solutions">
-        <div className="container">
-          <motion.div
-            className="custom-content"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2>Need Custom Solutions?</h2>
-            <p>We specialize in creating tailored kraft packaging for unique requirements.</p>
-            <motion.button 
-              className="custom-btn"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Request Custom Quote
-            </motion.button>
-          </motion.div>
-        </div>
-      </section>
-    </motion.div>
+    </div>
   );
 };
 
